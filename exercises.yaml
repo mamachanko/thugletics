@@ -3,7 +3,7 @@ back:
   - barbell rows
   - dumbbell rows
   - seated cable rows
-  - cable pull downs
+  - seated cable pulldowns
 biceps:
   - dumbbell curls
   - barbell curls
@@ -11,17 +11,16 @@ biceps:
   - cable curls
 chest:
   - barbell bench press
-  - dumpbell bench press
   - incline barbell bench press
-  - incline dumpbell bench press
+  - dumbbell bench press
+  - incline dumbbell bench press
   - pushups
   - barbell flies
-  - cable flies
 triceps:
   - bar dips
   - bench dips
   - pushdowns
-  - standing dumpbell triceps extensions
+  - standing dumbbell triceps extensions
   - kick backs
   - frenchpress
 shoulders:
@@ -30,10 +29,7 @@ shoulders:
   - front press
   - side raises
   - front raises
-calves:
-  - calve raises
-  - seated calve raises
-  - legs
+legs:
   - squats
   - lunges
   - leg press
@@ -42,7 +38,6 @@ calves:
 abs:
   - hanging leg raises
   - decline bench crunches
-  - rope crunches
   - crunches
   - heel touches
   - russian twists
