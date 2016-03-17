@@ -2,49 +2,78 @@ package main
 
 import (
 	"fmt"
-	"io/ioutil"
-	"path/filepath"
 	"gopkg.in/yaml.v2"
+	"io/ioutil"
+	"math/rand"
+	"path/filepath"
 )
 
-type Exercises map[string][]string
+const exerciseFilename string = "exercises.yaml"
 
-func GetExercises() Exercises {
-	filename, _ := filepath.Abs("exercises.yaml")
+type MuscleGroup struct {
+	Name      string
+	Exercises []Exercise
+}
+
+type Exercise string
+
+func (m *MuscleGroup) randomExercise() Exercise {
+	randomIndex := rand.Perm(len(m.Exercises))[0]
+	return m.Exercises[randomIndex]
+}
+
+func readExerciseFile() []byte {
+	filename, _ := filepath.Abs(exerciseFilename)
 	yamlfile, err := ioutil.ReadFile(filename)
-
 	if err != nil {
 		panic(err)
 	}
+	return yamlfile
+}
 
-	var exercises Exercises
+func parseExercises(raw map[string][]string) []MuscleGroup {
+	result := []MuscleGroup{}
+	for muscleGroupName, exerciseNames := range raw {
+		exercises := []Exercise{}
+		for _, exerciseName := range exerciseNames {
+			exercises = append(exercises, Exercise(exerciseName))
+		}
+		muscleGroup := MuscleGroup{Name: muscleGroupName, Exercises: exercises}
+		result = append(result, muscleGroup)
+	}
+	return result
+}
 
-	err = yaml.Unmarshal(yamlfile, &exercises)
+func GetExercises() []MuscleGroup {
+	var muscleGroups map[string][]string
+	err := yaml.Unmarshal(readExerciseFile(), &muscleGroups)
 	if err != nil {
 		panic(err)
 	}
-
-    return exercises
+	return parseExercises(muscleGroups)
 }
 
-func GetRandomExercises() []string {
-    exercises := GetExercises()
-     make([]string, 7)
+func GetRandomExercises() []Exercise {
+	muscleGroups := GetExercises()
+	exercises := []Exercise{}
+	for _, muscleGroup := range muscleGroups {
+		exercises = append(exercises, muscleGroup.randomExercise())
+	}
+	return exercises
 }
 
-func GetWorkout() []string {
-    workout := []string{"10 min cardio"}
-    workout = append(workout, GetRandomExercises()...)
-    return workout
+func GetWorkout() []Exercise {
+	workout := []Exercise{"10 min cardio"}
+	workout = append(workout, GetRandomExercises()...)
+	return workout
+}
+
+func PrintWorkout() {
+	for index, exercise := range GetWorkout() {
+		fmt.Printf("%v. %s\n", index+1, exercise)
+	}
 }
 
 func main() {
-    // exercises := GetExercises()
-    // for musclegroup, exercises := range exercises {
-    //     fmt.Printf("%v:\n", musclegroup)
-    //     for _, exercise := range exercises {
-    //         fmt.Printf("  - %v\n", exercise)
-    //     }
-    // }
-    fmt.Printf("%v\n", GetWorkout())
+	PrintWorkout()
 }
