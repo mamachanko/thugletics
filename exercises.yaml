@@ -1,44 +1,48 @@
 back:
-  - pullups
   - barbell rows
   - dumbbell rows
-  - seated cable rows
+  - pullups
   - seated cable pulldowns
+  - seated cable rows
 biceps:
-  - dumbbell curls
   - barbell curls
-  - concentration curls
   - cable curls
+  - concentration curls
+  - dumbbell curls
 chest:
-  - barbell bench press
-  - incline barbell bench press
+  - barbell flies
+  - bench press
+  - decline bench press
   - dumbbell bench press
+  - incline bench press
   - incline dumbbell bench press
   - pushups
-  - barbell flies
 triceps:
   - bar dips
   - bench dips
+  - frenchpress
+  - kick backs
   - pushdowns
   - standing dumbbell triceps extensions
-  - kick backs
-  - frenchpress
 shoulders:
   - behind neck press
-  - upright rows
   - front press
-  - side raises
   - front raises
+  - military press
+  - side raises
+  - upright rows
 legs:
-  - squats
-  - lunges
-  - leg press
+  - barbell lunges
+  - cable squats
+  - dumbbell lunges
+  - hamstring curls
   - leg extensions
-  - leg curls
+  - leg press
+  - squats
 abs:
-  - hanging leg raises
-  - decline bench crunches
+  - crisscross
   - crunches
+  - decline bench crunches
+  - hanging leg raises
   - heel touches
   - russian twists
-  - crisscross
