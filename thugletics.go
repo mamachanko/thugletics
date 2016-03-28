@@ -6,6 +6,7 @@ import (
 	"io/ioutil"
 	"math/rand"
 	"path/filepath"
+	"time"
 )
 
 const exerciseFilename string = "exercises.yaml"
@@ -75,5 +76,6 @@ func PrintWorkout() {
 }
 
 func main() {
+	rand.Seed(time.Now().UTC().UnixNano())
 	PrintWorkout()
 }
