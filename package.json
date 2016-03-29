@@ -13,6 +13,7 @@
   "author": "Max Brauer (mamachanko)",
   "license": "ISC",
   "dependencies": {
+    "express": "4.13.4",
     "js-yaml": "^3.5.5"
   }
 }
