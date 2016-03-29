@@ -3,6 +3,10 @@
   "version": "1.0.0",
   "description": "Generates a workout",
   "main": "index.js",
+  "engines": {
+    "node": "0.12.12",
+    "npm": "2.14.9"
+  },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
