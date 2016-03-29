@@ -8,7 +8,10 @@
     "npm": "2.14.9"
   },
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node index.js",
+    "deploy": "gcloud preview app deploy app.yaml",
+    "dev": "nodemon ."
   },
   "repository": {
     "type": "git",
