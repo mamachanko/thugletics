@@ -3,6 +3,7 @@
 var yaml = require('js-yaml');
 var fs = require('fs');
 var express = require('express');
+var _ = require('lodash');
 
 var app = express();
 
@@ -14,10 +15,22 @@ function parseExercises() {
     return yaml.safeLoad(readExercises());
 }
 
+function getWorkout() {
+    var workout = {'1': '10 min cardio'};
+    var exercises = parseExercises();
+    var i = 2;
+    var muscleGroups = _.shuffle(Object.keys(exercises));
+    muscleGroups.forEach(function (muscleGroup) {
+        workout[i.toString()] = _.sample(exercises[muscleGroup]);
+        i++;
+    })
+    return workout;
+}
+
 app.post('/workout', function(req, res) {
-    res.set('Content-Type', 'application/json');
     res.status(201);
-    res.send(parseExercises());
+    res.set('Content-Type', 'application/json');
+    res.send({'data': getWorkout()});
 });
 
 if (module === require.main) {
