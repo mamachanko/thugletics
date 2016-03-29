@@ -27,14 +27,26 @@ function getWorkout() {
     return workout;
 }
 
-function workoutHandler(req, res) {
+function getWorkoutTxt() {
+    return _.map(getWorkout(), function (exercise, index) {
+        return index + '. ' + exercise;
+    }).join('\n');
+}
+
+function workoutHandlerJson(req, res) {
     res.status(201);
     res.set('Content-Type', 'application/json');
     res.send({'data': getWorkout()});
 };
 
-app.get('/', workoutHandler);
-app.post('/workout', workoutHandler);
+function workoutHandlerTxt(req, res) {
+    res.status(201);
+    res.set('Content-Type', 'text/plain');
+    res.send(getWorkoutTxt());
+};
+
+app.get('/', workoutHandlerTxt);
+app.post('/workout', workoutHandlerJson);
 
 if (module === require.main) {
     var server = app.listen(process.env.PORT || 8080, function () {
