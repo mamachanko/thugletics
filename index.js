@@ -27,11 +27,14 @@ function getWorkout() {
     return workout;
 }
 
-app.post('/workout', function(req, res) {
+function workoutHandler(req, res) {
     res.status(201);
     res.set('Content-Type', 'application/json');
     res.send({'data': getWorkout()});
-});
+};
+
+app.get('/', workoutHandler);
+app.post('/workout', workoutHandler);
 
 if (module === require.main) {
     var server = app.listen(process.env.PORT || 8080, function () {
