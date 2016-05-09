@@ -1,14 +1,17 @@
+legs:
+  - barbell lunges
+  - cable squats
+  - dumbbell lunges
+  - hamstring curls
+  - leg extensions
+  - leg press
+  - squats
 back:
   - barbell rows
   - dumbbell rows
   - pullups
   - seated cable pulldowns
   - seated cable rows
-biceps:
-  - barbell curls
-  - cable curls
-  - concentration curls
-  - dumbbell curls
 chest:
   - barbell flies
   - bench press
@@ -17,6 +20,11 @@ chest:
   - incline bench press
   - incline dumbbell bench press
   - pushups
+biceps:
+  - barbell curls
+  - cable curls
+  - concentration curls
+  - dumbbell curls
 triceps:
   - bar dips
   - bench dips
@@ -31,14 +39,6 @@ shoulders:
   - military press
   - side raises
   - upright rows
-legs:
-  - barbell lunges
-  - cable squats
-  - dumbbell lunges
-  - hamstring curls
-  - leg extensions
-  - leg press
-  - squats
 abs:
   - crisscross
   - crunches

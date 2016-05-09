@@ -19,7 +19,7 @@ function getWorkout() {
     var workout = {'1': '10 min cardio'};
     var exercises = parseExercises();
     var i = 2;
-    var muscleGroups = _.shuffle(Object.keys(exercises));
+    var muscleGroups = Object.keys(exercises);
     muscleGroups.forEach(function (muscleGroup) {
         workout[i.toString()] = _.sample(exercises[muscleGroup]);
         i++;
