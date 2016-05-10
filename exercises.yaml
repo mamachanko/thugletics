@@ -10,10 +10,10 @@ back:
   - barbell rows
   - dumbbell rows
   - pullups
-  - seated cable pulldowns
-  - seated cable rows
+  - pulldowns
+  - cable rows
 chest:
-  - barbell flies
+  - flies
   - bench press
   - decline bench press
   - dumbbell bench press
@@ -31,18 +31,18 @@ triceps:
   - frenchpress
   - kick backs
   - pushdowns
-  - standing dumbbell triceps extensions
+  - triceps extensions
 shoulders:
-  - behind neck press
+  - neck press
   - front press
   - front raises
   - military press
   - side raises
   - upright rows
 abs:
-  - crisscross
+  - criss cross
   - crunches
-  - decline bench crunches
-  - hanging leg raises
+  - decline crunches
+  - knee raises
   - heel touches
   - russian twists
